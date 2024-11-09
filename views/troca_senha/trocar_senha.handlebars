@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../tela_cadastros/senha.css">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    
+        <div class="form">
+
+            <div class="login-button">
+                <button><a href="/clube/login">Entrar</a></button>
+            </div>
+
+            <form action="/clube/alterarSenha/save" method="post">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Alterar Senha</h1>
+                    </div>
+                   
+                </div>
+
+                <div class="input-group">
+
+                    <div class="input-box">
+                        <label for="number">E-mail</label>
+                        <input id="email" type="text" name="email" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" required>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="confirmPassword">Confirme sua Senha</label>
+                        <input id="confirmPassword" type="password" name="confirmPassword" required>
+                    </div>
+
+                </div>
+                
+                <div class="continue-button">
+                    <button type="submit">Continuar</a></button>
+                </div>
+               
+            </form>
+            <div class="continue-button">
+                <button type="submit"><a href="/">Voltar</a> </button>
+            </div>
+
+            <br>
+        <div>
+            {{#if messages.message}}
+                {{#if messages.error}}
+                    <div style="color: red;" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{messages.error}}</strong> 
+                {{/if}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        {{!-- <span aria-hidden="true"></span> --}}
+                        <a aria-hidden="true" href="/clube/alterarSenha">&times;</a>
+                </button>
+            {{/if}}
+        </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
