@@ -1,8 +1,8 @@
-const nodemailer = require('nodemailer');
+//const nodemailer = require('nodemailer');
 //const emailPrincipal = require('../oculto/email')
 //const senhaEmail = require('../oculto/senhaEmail')
 
-module.exports = 
+//module.exports = 
 // Método que enviar email para o usuario
 // function enviarEmail (email, titulo, html, msg){
         
