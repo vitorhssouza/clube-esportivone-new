@@ -4,7 +4,7 @@ const {GrauParentesco} = require('../models/Dependentes')
 const Administradores = require('../models/Administradores')
 const Agendamento = require('../models/Agendamento')
 const { AreasComuns } = require('../models/AreaComuns')
-const enviarEmail = require('../helper/enviarEmail')
+//const enviarEmail = require('../helper/enviarEmail')
 const { Op } = require('sequelize');
 
 class AdministradorController{
@@ -85,12 +85,12 @@ class AdministradorController{
         // return
         //console.log(associado.email)
 
-        enviarEmail(
-            associado.email,
-            'Você foi excluido da nossa base de dados.',
-            '<h1> Você foi excluido da nossa base de dados.</h1> <br> <p> Você foi excluido da nossa base de dados.</p>',
-            'Infelizmente você foi excluido da nossa base de dados! '  
-            )
+        // enviarEmail(
+        //     associado.email,
+        //     'Você foi excluido da nossa base de dados.',
+        //     '<h1> Você foi excluido da nossa base de dados.</h1> <br> <p> Você foi excluido da nossa base de dados.</p>',
+        //     'Infelizmente você foi excluido da nossa base de dados! '  
+        //     )
 
         await Agendamento.destroy({where: {id_associados: idAssociado}})
 
@@ -116,12 +116,12 @@ class AdministradorController{
         const associado = await Associados.findOne({raw: true, where:{id_associados: idAssociado}})
         //console.log(associado.email)
 
-        enviarEmail(
-            associado.email,
-            'Sua solicitação foi aceita!',
-            '<h1> Seja bem vindo ao nosso clube! </h1> <br><p>Você agora faz parte do clube RIO POMBA VALLEY! </p>',
-            'Seja bem vindo ao nosso clube! '  
-            )
+        // enviarEmail(
+        //     associado.email,
+        //     'Sua solicitação foi aceita!',
+        //     '<h1> Seja bem vindo ao nosso clube! </h1> <br><p>Você agora faz parte do clube RIO POMBA VALLEY! </p>',
+        //     'Seja bem vindo ao nosso clube! '  
+        //     )
 
         await Associados.update({situacao: true},{where: {id_associados: idAssociado}} )
         // res.redirect(`/clube/admin/${id}`)
@@ -141,13 +141,13 @@ class AdministradorController{
         const associado = await Associados.findOne({raw: true, where:{id_associados: idAssociado}})
         //console.log(associado.email)
 
-        enviarEmail(
-            associado.email,
-            'Infelizmente seu registro foi desativado!',
-            '<h1> Infelizmente seu registro foi desativado.</h1> <br><p>Você não faz mais parte do clube RIO POMBA VALLEY.</p>',
-            'Infelizmente seu registro foi desativado, você não faz mais parte do clube aurora! '
+        // enviarEmail(
+        //     associado.email,
+        //     'Infelizmente seu registro foi desativado!',
+        //     '<h1> Infelizmente seu registro foi desativado.</h1> <br><p>Você não faz mais parte do clube RIO POMBA VALLEY.</p>',
+        //     'Infelizmente seu registro foi desativado, você não faz mais parte do clube aurora! '
             
-            )
+        //     )
         
         await Associados.update({situacao: false},{where: {id_associados: idAssociado}})
 
