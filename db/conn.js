@@ -3,7 +3,7 @@ const {Sequelize} = require('sequelize');               //Importando o sequelize
 //const senha = require('../oculto/senha');               //Importando o arquivo senha
 const senha = ''; 
 
-const sequelize = new Sequelize('novo_clube', 'pic', senha, {host: 'localhost', dialect: 'mysql'});
+const sequelize = new Sequelize('novo_clube', 'pic', '', {host: 'localhost', dialect: 'mysql'});
 
 try {
     sequelize.authenticate();
