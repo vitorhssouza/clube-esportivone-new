@@ -19,7 +19,7 @@ module.exports = sequelize;  */
 require('dotenv').config();
 // const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize(
+/*const sequelize = new Sequelize(
   DB_NAME,
   DB_USER,
   DB_PASS,
@@ -27,6 +27,18 @@ const sequelize = new Sequelize(
     host: DB_HOST,
     dialect: 'mysql',
     port: DB_PORT,
+  }
+);*/
+
+
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASS,
+  {
+    host: process.env.DB_HOST, // Verifique se o valor de DB_HOST está correto
+    dialect: 'mysql',
+    port: process.env.DB_PORT 
   }
 );
 
